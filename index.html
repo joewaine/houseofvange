@@ -1,0 +1,311 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+
+  <style type="text/css">
+
+
+body{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70ff7e+0,70ffeb+23,30ff86+50,edff30+75,ffafdc+100 */
+background: #70ff7e; /* Old browsers */
+background: -moz-linear-gradient(top,  #70ff7e 0%, #70ffeb 23%, #30ff86 50%, #edff30 75%, #ffafdc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #70ff7e 0%,#70ffeb 23%,#30ff86 50%,#edff30 75%,#ffafdc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #70ff7e 0%,#70ffeb 23%,#30ff86 50%,#edff30 75%,#ffafdc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70ff7e', endColorstr='#ffafdc',GradientType=0 ); /* IE6-9 */
+
+
+
+	line-height: 2em;}
+
+
+.verylong {
+  height: 1000px;
+}
+
+svg {
+
+  position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+.path {
+  stroke-dasharray: 1000;
+  /* stroke-dashoffset: 1000; */
+
+  /* stroke-dashoffset: 0; */
+  /* animation: dash 5s linear alternate infinite; */
+}
+
+/* @keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+} */
+
+
+
+.block{
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+  </style>
+</head>
+
+<body class="">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  
+
+  
+
+
+  <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
+<style type="text/css">
+ .st0{fill:#FF0000;}
+ .st1{fill:none;stroke:#ffffff;stroke-width:2;}
+</style>
+
+<path id="theMotionPath" class="st1" d="M4.9,113.1c0,0,2.8-15.6,6.6-15.3S21,91.4,22,89c1-2.5,5.4-7.7,6.6-6.8
+ c1.3,0.8,5.4,2.5,6.5-1.4s4.5-5.3,5.2-4.7c0.8,0.6,13.8-5.1,14.8-8.4c1-3.3-6.6-8.8,4.9-15.9s23-7.9,23.5-14c0.5-6-0.5-9.9,2.8-10.1
+ c3.3-0.3,21.7-1.1,21.5-8.5s2.8-13.1,7.2-12"/>
+ <circle id="dot" class="st0" cx="0" cy="0" r="5"/>
+
+</svg> -->
+
+<div class="block">
+<img src="img/HOV_white.png" alt="hov white">
+</div>
+<div class="block">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyg8SQhbtmTDekvr4Q6vnO9IT9DQvBfaswy9IAcpZapin_-A/viewform?embedded=true" width="640" height="1101" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+
+<div class="verylong">
+</div>
+  
+  
+  
+  
+  
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <script type="text/javascript">
+
+function positionTheDot() {
+
+// What percentage down the page are we? 
+var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+
+
+var negprog = 1.0-scrollPercentage;
+
+var corprog = negprog * 1000
+
+// Get path length
+var path = document.getElementById("theMotionPath");
+path.setAttribute('stroke-dashoffset', corprog);
+path.setAttribute('stroke', 'white');
+
+var pathLen = path.getTotalLength();
+
+// Get the position of a point at <scrollPercentage> along the path.
+var pt = path.getPointAtLength(scrollPercentage * pathLen);
+
+// // Position the red dot at this point
+// var dot = document.getElementById("dot");
+// dot.setAttribute("transform", "translate("+ pt.x + "," + pt.y + ")");
+
+};
+
+// Update dot position when we get a scroll event.
+window.addEventListener("scroll", positionTheDot);
+
+// Set the initial position of the dot.
+positionTheDot();
+    </script>
+
+
+
+
+<script language="JavaScript1.2">
+
+  /*
+  Flying Butterfly script (By BGAudioDr@aol.com)
+  Modified slightly/ permission granted to Dynamic Drive to feature script in archive
+  For full source, visit http://www.dynamicdrive.com
+  */
+  
+  var Ymax=8;                                //MAX # OF PIXEL STEPS IN THE "X" DIRECTION
+  var Xmax=8;                                //MAX # OF PIXEL STEPS IN THE "Y" DIRECTION
+  var Tmax=10000;                        //MAX # OF MILLISECONDS BETWEEN PARAMETER CHANGES
+  
+  //FLOATING IMAGE URLS FOR EACH IMAGE. ADD OR DELETE ENTRIES. KEEP ELEMENT NUMERICAL ORDER STARTING WITH "0" !!
+  
+  var floatimages=new Array();
+  floatimages[0]='unnamed.gif';
+  floatimages[1]='unnamed.gif';
+  floatimages[2]='unnamed.gif';
+  floatimages[3]='unnamed.gif';
+  floatimages[4]='unnamed.gif';
+  // floatimages[5]='butterfly1.gif';
+  // floatimages[6]='butterfly1.gif';
+  
+  //*********DO NOT EDIT BELOW***********
+  var NS4 = (navigator.appName.indexOf("Netscape")>=0 && parseFloat(navigator.appVersion) >= 4 && parseFloat(navigator.appVersion) < 5)? true : false;
+  var IE4 = (document.all)? true : false;
+  var NS6 = (parseFloat(navigator.appVersion) >= 5 && navigator.appName.indexOf("Netscape")>=0 )? true: false;
+  var wind_w, wind_h, t='', IDs=new Array();
+  for(i=0; i<floatimages.length; i++){
+  t+=(NS4)?'<layer name="pic'+i+'" visibility="hide" width="10" height="10"><a href="javascript:hidebutterfly()">' : '<div id="pic'+i+'" style="position:absolute; visibility:hidden;width:10px; height:10px; z-index:1000"><a href="javascript:hidebutterfly()">';
+  t+='<img src="'+floatimages[i]+'" name="p'+i+'" border="0">';
+  t+=(NS4)? '</a></layer>':'</a></div>';
+  }
+  document.write(t);
+  
+  function moveimage(num){
+  if(getidleft(num)+IDs[num].W+IDs[num].Xstep >= wind_w+getscrollx())IDs[num].Xdir=false;
+  if(getidleft(num)-IDs[num].Xstep<=getscrollx())IDs[num].Xdir=true;
+  if(getidtop(num)+IDs[num].H+IDs[num].Ystep >= wind_h+getscrolly())IDs[num].Ydir=false;
+  if(getidtop(num)-IDs[num].Ystep<=getscrolly())IDs[num].Ydir=true;
+  moveidby(num, (IDs[num].Xdir)? IDs[num].Xstep :  -IDs[num].Xstep , (IDs[num].Ydir)?  IDs[num].Ystep:  -IDs[num].Ystep);
+  }
+  
+  function getnewprops(num){
+  IDs[num].Ydir=Math.floor(Math.random()*2)>0;
+  IDs[num].Xdir=Math.floor(Math.random()*2)>0;
+  IDs[num].Ystep=Math.ceil(Math.random()*Ymax);
+  IDs[num].Xstep=Math.ceil(Math.random()*Xmax)
+  setTimeout('getnewprops('+num+')', Math.floor(Math.random()*Tmax));
+  }
+  
+  function getscrollx(){
+  if(NS4 || NS6)return window.pageXOffset;
+  if(IE4)return document.body.scrollLeft;
+  }
+  
+  function getscrolly(){
+  if(NS4 || NS6)return window.pageYOffset;
+  if(IE4)return document.body.scrollTop;
+  }
+  
+  function getid(name){
+  if(NS4)return document.layers[name];
+  if(IE4)return document.all[name];
+  if(NS6)return document.getElementById(name);
+  }
+  
+  function moveidto(num,x,y){
+  if(NS4)IDs[num].moveTo(x,y);
+  if(IE4 || NS6){
+  IDs[num].style.left=x+'px';
+  IDs[num].style.top=y+'px';
+  }}
+  
+  function getidleft(num){
+  if(NS4)return IDs[num].left;
+  if(IE4 || NS6)return parseInt(IDs[num].style.left);
+  }
+  
+  function getidtop(num){
+  if(NS4)return IDs[num].top;
+  if(IE4 || NS6)return parseInt(IDs[num].style.top);
+  }
+  
+  function moveidby(num,dx,dy){
+  if(NS4)IDs[num].moveBy(dx, dy);
+  if(IE4 || NS6){
+  IDs[num].style.left=(getidleft(num)+dx)+'px';
+  IDs[num].style.top=(getidtop(num)+dy)+'px';
+  }}
+  
+  function getwindowwidth(){
+  if(NS4 || NS6)return window.innerWidth;
+  if(IE4)return document.body.clientWidth;
+  }
+  
+  function getwindowheight(){
+  if(NS4 || NS6)return window.innerHeight;
+  if(IE4)return document.body.clientHeight;
+  }
+  
+  function init(){
+  wind_w=getwindowwidth();
+  wind_h=getwindowheight();
+  for(i=0; i<floatimages.length; i++){
+  IDs[i]=getid('pic'+i);
+  if(NS4){
+  IDs[i].W=IDs[i].document.images["p"+i].width;
+  IDs[i].H=IDs[i].document.images["p"+i].height;
+  }
+  if(NS6 || IE4){
+  IDs[i].W=document.images["p"+i].width;
+  IDs[i].H=document.images["p"+i].height;
+  }
+  getnewprops(i);
+  moveidto(i , Math.floor(Math.random()*(wind_w-IDs[i].W)), Math.floor(Math.random()*(wind_h-IDs[i].H)));
+  if(NS4)IDs[i].visibility = "show";
+  if(IE4 || NS6)IDs[i].style.visibility = "visible";
+  startfly=setInterval('moveimage('+i+')',Math.floor(Math.random()*100)+100);
+  }}
+  
+  function hidebutterfly(){
+  for(i=0; i<floatimages.length; i++){
+  if (IE4)
+  eval("document.all.pic"+i+".style.visibility='hidden'")
+  else if (NS6)
+  document.getElementById("pic"+i).style.visibility='hidden'
+  else if (NS4)
+  eval("document.pic"+i+".visibility='hide'")
+  clearInterval(startfly)
+  }
+  }
+  
+  if (NS4||NS6||IE4){
+  window.onload=init;
+  window.onresize=function(){ wind_w=getwindowwidth(); wind_h=getwindowheight(); }
+  }
+  
+  </script>
+<!-- butterflies from http://dynamicdrive.com/dynamicindex4/butterfly.htm -->
+
+
+
+</body>
+
+</html>
